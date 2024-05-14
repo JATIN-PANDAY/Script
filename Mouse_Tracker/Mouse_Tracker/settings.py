@@ -71,6 +71,25 @@ TEMPLATES = [
 WSGI_APPLICATION = "Mouse_Tracker.wsgi.application"
 
 
+####### Added Manually for use rest framework #########
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.SessionAuthentication',  # Use session-based authentication
+        'rest_framework.authentication.TokenAuthentication',   # Use token-based authentication
+    ],
+}
+
+# settings.py
+REST_FRAMEWORK = {
+    'DEFAULT_RENDERER_CLASSES': [
+        'rest_framework.renderers.JSONRenderer',
+    ]
+}
+
+
+
+
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
